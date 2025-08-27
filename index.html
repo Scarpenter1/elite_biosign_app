@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exobiology High‑Value Biosign Finder</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <h1>Exobiology High‑Value Biosign Finder</h1>
+      <div class="field">
+        <label for="atmosphere">Atmosphere type</label>
+        <select id="atmosphere"></select>
+      </div>
+      <div class="field">
+        <label for="bodyType">Body type</label>
+        <select id="bodyType"></select>
+      </div>
+      <div class="field">
+        <label for="temperature">Surface temperature</label>
+        <div class="temp-input">
+          <input type="number" id="temperature" placeholder="Enter temperature" />
+          <select id="tempUnit">
+            <option value="K">K</option>
+            <option value="C">°C</option>
+            <option value="F">°F</option>
+          </select>
+        </div>
+      </div>
+      <button id="checkBtn">Check for biosigns</button>
+      <div id="results"></div>
+    </div>
+    <script src="renderer.js"></script>
+  </body>
+</html>

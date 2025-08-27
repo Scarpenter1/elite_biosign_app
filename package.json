@@ -1,0 +1,37 @@
+{
+  "name": "elite-biosign-app",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack:win": "electron-builder --win portable",
+    "dist:win": "electron-builder --win nsis"
+  },
+  "build": {
+    "appId": "com.scarpenter.elitebiosign",
+    "productName": "Elite Biosign Finder",
+    "files": [
+      "main.js",
+      "index.html",
+      "renderer.js",
+      "style.css",
+      "data.js",
+      "package.json"
+    ],
+    "asar": true,
+    "win": {
+      "target": [
+        { "target": "portable", "arch": ["x64"] },
+        { "target": "nsis", "arch": ["x64"] }
+      ],
+      "artifactName": "${productName}-${version}-${arch}.${ext}",
+      "icon": "build/EBA.ico"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "allowElevation": true,
+      "deleteAppDataOnUninstall": false
+    }
+  }
+}
